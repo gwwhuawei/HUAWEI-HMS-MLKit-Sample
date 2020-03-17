@@ -171,19 +171,22 @@ public final class TextRecognitionActivity extends BaseActivity
             this.languageDialog.dismiss();
             this.preview.release();
             this.restartLensEngine(Constant.POSITION_EN);
-        } else if (view.getId() == R.id.japanese) {
-            SharedPreferencesUtil.getInstance(this).
-                    putStringValue(Constant.POSITION_KEY, Constant.POSITION_JA);
-            this.languageDialog.dismiss();
-            this.preview.release();
-            this.restartLensEngine(Constant.POSITION_JA);
-        } else if (view.getId() == R.id.korean) {
-            SharedPreferencesUtil.getInstance(this).
-                    putStringValue(Constant.POSITION_KEY, Constant.POSITION_KO);
-            this.languageDialog.dismiss();
-            this.preview.release();
-            this.restartLensEngine(Constant.POSITION_KO);
-        } else if (view.getId() == R.id.latin) {
+        }
+//        else if (view.getId() == R.id.japanese) {
+//            SharedPreferencesUtil.getInstance(this).
+//                    putStringValue(Constant.POSITION_KEY, Constant.POSITION_JA);
+//            this.languageDialog.dismiss();
+//            this.preview.release();
+//            this.restartLensEngine(Constant.POSITION_JA);
+//        }
+//        else if (view.getId() == R.id.korean) {
+//            SharedPreferencesUtil.getInstance(this).
+//                    putStringValue(Constant.POSITION_KEY, Constant.POSITION_KO);
+//            this.languageDialog.dismiss();
+//            this.preview.release();
+//            this.restartLensEngine(Constant.POSITION_KO);
+//        }
+        else if (view.getId() == R.id.latin) {
             SharedPreferencesUtil.getInstance(this).
                     putStringValue(Constant.POSITION_KEY, Constant.POSITION_LA);
             this.languageDialog.dismiss();
@@ -233,10 +236,10 @@ public final class TextRecognitionActivity extends BaseActivity
         this.textCN.setOnClickListener(this);
         this.textEN = view.findViewById(R.id.english);
         this.textEN.setOnClickListener(this);
-        this.textJN = view.findViewById(R.id.japanese);
-        this.textJN.setOnClickListener(this);
-        this.textKN = view.findViewById(R.id.korean);
-        this.textKN.setOnClickListener(this);
+//        this.textJN = view.findViewById(R.id.japanese);
+//        this.textJN.setOnClickListener(this);
+//        this.textKN = view.findViewById(R.id.korean);
+//        this.textKN.setOnClickListener(this);
         this.textLN = view.findViewById(R.id.latin);
         this.textLN.setOnClickListener(this);
         this.languageDialog.setCanceledOnTouchOutside(true);
@@ -281,9 +284,9 @@ public final class TextRecognitionActivity extends BaseActivity
         this.textType = position;
         this.textCN.setSelected(false);
         this.textEN.setSelected(false);
-        this.textJN.setSelected(false);
+//        this.textJN.setSelected(false);
         this.textLN.setSelected(false);
-        this.textKN.setSelected(false);
+//        this.textKN.setSelected(false);
         switch (position) {
             case Constant.POSITION_CN:
                 this.textCN.setSelected(true);
@@ -294,12 +297,12 @@ public final class TextRecognitionActivity extends BaseActivity
             case Constant.POSITION_LA:
                 this.textLN.setSelected(true);
                 break;
-            case Constant.POSITION_JA:
-                this.textJN.setSelected(true);
-                break;
-            case Constant.POSITION_KO:
-                this.textKN.setSelected(true);
-                break;
+//            case Constant.POSITION_JA:
+//                this.textJN.setSelected(true);
+//                break;
+//            case Constant.POSITION_KO:
+//                this.textKN.setSelected(true);
+//                break;
             default:
         }
     }

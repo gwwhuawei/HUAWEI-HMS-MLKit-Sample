@@ -30,7 +30,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.mlkit.sample.R;
+import com.mlkit.sample.activity.fragment.PictureCategoryFragment;
 import com.mlkit.sample.activity.imgseg.ImageSegmentationActivity;
+import com.mlkit.sample.util.Constant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +61,7 @@ public final class StartActivity extends BaseActivity
         this.findViewById(R.id.layout_text).setOnClickListener(this);
         this.findViewById(R.id.layout_classification).setOnClickListener(this);
         this.findViewById(R.id.layout_icr).setOnClickListener(this);
-        this.findViewById(R.id.layout_shopping).setOnClickListener(this);
+        this.findViewById(R.id.layout_landmark).setOnClickListener(this);
         this.findViewById(R.id.layout_translate).setOnClickListener(this);
         this.findViewById(R.id.layout_more).setOnClickListener(this);
         if (!this.allPermissionsGranted()) {
@@ -82,8 +84,10 @@ public final class StartActivity extends BaseActivity
             case R.id.layout_text:
                 this.startActivity(new Intent(StartActivity.this, TextRecognitionActivity.class));
                 break;
-            case R.id.layout_shopping:
-                Toast.makeText(this.getApplicationContext(), this.getText(R.string.coming_soon), Toast.LENGTH_SHORT).show();
+            case R.id.layout_landmark:
+                Intent intent = new Intent(StartActivity.this, RemoteDetectionActivity.class);
+                intent.putExtra(Constant.MODEL_TYPE, Constant.CLOUD_LANDMARK_DETECTION);
+                this.startActivity(intent);
                 break;
             case R.id.layout_translate:
                 this.startActivity(new Intent(StartActivity.this, TranslatorActivity.class));
@@ -98,7 +102,8 @@ public final class StartActivity extends BaseActivity
                 this.startActivity(new Intent(StartActivity.this, ImageSegmentationActivity.class));
                 break;
             case R.id.layout_icr:
-                this.startActivity(new Intent(StartActivity.this, IDCardRecognitionActivity.class));
+                Toast.makeText(this.getApplicationContext(), this.getText(R.string.coming_soon), Toast.LENGTH_SHORT).show();
+//                this.startActivity(new Intent(StartActivity.this, IDCardRecognitionActivity.class));
                 break;
             default:
                 Toast.makeText(this.getApplicationContext(), this.getText(R.string.coming_soon), Toast.LENGTH_SHORT).show();

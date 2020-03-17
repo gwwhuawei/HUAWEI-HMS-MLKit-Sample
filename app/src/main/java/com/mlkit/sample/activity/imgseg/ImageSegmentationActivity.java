@@ -20,6 +20,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -93,8 +94,9 @@ public class ImageSegmentationActivity extends BaseActivity implements View.OnCl
                 this.setCaptureImageView();
                 break;
             case R.id.fragment_three:
-                this.mViewPager.setCurrentItem(2);
-                this.setSliceImageView();
+                Toast.makeText(this.getApplicationContext(), this.getText(R.string.coming_soon), Toast.LENGTH_SHORT).show();
+//                this.mViewPager.setCurrentItem(2);
+//                this.setSliceImageView();
                 break;
             case R.id.back:
                 this.finish();

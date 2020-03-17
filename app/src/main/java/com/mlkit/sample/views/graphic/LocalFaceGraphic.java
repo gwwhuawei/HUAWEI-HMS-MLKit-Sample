@@ -219,7 +219,7 @@ public class LocalFaceGraphic extends BaseGraphic {
             y = y - space;
             canvas.drawText("Hat Probability: " + decimalFormat.format(face.getFeatures().getHatProbability()), x, y, this.faceFeaturePaintText);
             x = x + width;
-            canvas.drawText("Age: " + face.getFeatures().getAge(), x, y, this.faceFeaturePaintText);
+//            canvas.drawText("Age: " + face.getFeatures().getAge(), x, y, this.faceFeaturePaintText);
             y = y - space;
             x = start;
             canvas.drawText("Moustache Probability: " + decimalFormat.format(face.getFeatures().getMoustacheProbability()), x, y, this.faceFeaturePaintText);
